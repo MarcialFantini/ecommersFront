@@ -1,0 +1,22 @@
+.containerSections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+
+  margin: 20px 0;
+}
+
+.containerLeft,
+.containerRight,
+.containerCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  min-height: 200px;
+}
+
+@media (min-width: 700px) {
+  .containerSections {
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  }
+}

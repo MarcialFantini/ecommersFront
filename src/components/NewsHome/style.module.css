@@ -1,0 +1,27 @@
+.containerNews {
+  margin: 40px 0;
+
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.subTitle {
+  font-size: 1.6rem;
+  color: gray;
+}
+
+.containerCardsNews {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}

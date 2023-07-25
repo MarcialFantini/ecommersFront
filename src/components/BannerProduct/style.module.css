@@ -1,0 +1,53 @@
+.containerBannerProduct {
+  display: flex;
+  flex-direction: row;
+
+  gap: 10px;
+
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+
+  margin: 10px 0;
+
+  background: #f42c36;
+  color: white;
+
+  border-radius: 20px;
+}
+
+.containerLeft,
+.containerRight {
+  width: 100%;
+
+  padding: 40px 0 40px 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.subText {
+  font-size: 1.6rem;
+  color: whitesmoke;
+  margin: 0;
+}
+
+.title {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.subTitle {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #050101;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}

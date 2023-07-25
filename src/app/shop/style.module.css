@@ -1,0 +1,9 @@
+.containerSearch {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 40px 0;
+}

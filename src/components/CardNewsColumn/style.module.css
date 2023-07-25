@@ -1,0 +1,40 @@
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.picture {
+  width: 100%;
+  aspect-ratio: 1.5;
+  background: rgb(106, 103, 109);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.subTitle {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 0 0 10px 0;
+}
+
+.text {
+  font-size: 1.6rem;
+  margin: 0;
+}

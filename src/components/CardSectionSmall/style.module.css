@@ -1,0 +1,36 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  padding: 20px;
+
+  background: black;
+  color: white;
+
+  border-radius: 10px;
+}
+
+.text {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.subTitle {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #ee2f34;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}

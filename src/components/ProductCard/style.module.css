@@ -1,0 +1,39 @@
+.containerCardProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.picture {
+  width: 100%;
+  min-height: 150px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: whitesmoke;
+
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+
+  position: absolute;
+}
+
+.titleProduct {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.price {
+  font-size: 2rem;
+  margin: 10px 0;
+}

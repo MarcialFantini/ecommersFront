@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.leftContainer {
+  display: flex;
+  padding: 0;
+}
+
+.listLink {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+.link {
+  color: rgba(128, 128, 128, 0.568);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: black;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
