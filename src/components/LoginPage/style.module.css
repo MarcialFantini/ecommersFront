@@ -1,0 +1,20 @@
+.containerLogin {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  margin: 10px 0;
+}
+
+.picture {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
