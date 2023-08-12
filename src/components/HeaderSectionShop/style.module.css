@@ -1,0 +1,13 @@
+.containerHeader {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+  gap: 10px;
+}
+
+.containerCardGreat {
+  width: 100%;
+  height: auto;
+
+  
+}
