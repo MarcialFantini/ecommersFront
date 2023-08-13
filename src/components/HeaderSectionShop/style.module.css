@@ -1,13 +1,85 @@
-.containerHeader {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-
-  gap: 10px;
-}
-
-.containerCardGreat {
+.img {
   width: 100%;
   height: auto;
+}
 
-  
+.picture {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgPrimary {
+  width: 120%;
+}
+
+.headerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 5px;
+
+  max-width: 1200px;
+  margin: auto;
+}
+
+.containerLeft {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+}
+
+.containerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.topContainerSub {
+  height: 100%;
+  width: 100%;
+
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  background: rgba(182, 172, 157, 0.589);
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.topContainerSub h1 {
+  font-size: 3.2rem;
+}
+
+.topContainerSub p {
+  font-size: 1.6rem;
+}
+
+.containerRightBottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.containerImgSub {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.containerImgSub h2 {
+  position: absolute;
+  color: white;
+  font-size: 2.4rem;
 }
