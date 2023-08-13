@@ -1,9 +1,30 @@
 .containerSearch {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  padding-left: 5%;
+}
+
+.containerSearch input {
+  width: auto;
   font-size: 2rem;
-  margin: 40px 0;
+  padding: 5px;
+  border: none;
+  margin: 10px;
+}
+
+.containerSearch button {
+  width: auto;
+  height: 100%;
+  font-size: 2rem;
+  border: none;
+  padding: 10px 20px;
+
+  border-radius: 10px;
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.containerSearch button:hover {
+  background: rgba(255, 0, 0, 0.863);
+  color: white;
 }

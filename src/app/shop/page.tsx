@@ -8,12 +8,13 @@ import HeaderSectionShop from "@/components/HeaderSectionShop";
 export default function Shop() {
   return (
     <div>
+      <div className={style.containerSearch}>
+        <input placeholder={"   Search a product !"} type="text" />
+        <button>Search</button>
+      </div>
       <DashBoardCategories></DashBoardCategories>
       <HeaderSectionShop></HeaderSectionShop>
-      <div className={style.containerSearch}>
-        Search a product
-        <input type="text" />
-      </div>
+
       <ListShop></ListShop>
     </div>
   );
