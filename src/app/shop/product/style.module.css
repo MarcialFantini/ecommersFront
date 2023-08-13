@@ -1,85 +1,46 @@
-.containerProduct {
+.img {
   width: 100%;
-  height: 90vh;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: auto;
 }
 
-.pictureLeft {
+.picture {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   overflow: hidden;
-  border-radius: 20px;
-
-  position: relative;
-
-  aspect-ratio: 0.5;
 }
 
-.imgLeft {
-  width: 100%;
-  height: auto;
-  position: absolute;
-}
-
-.containerProductRight {
-  height: 8cap;
-  width: 100%;
-
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.pictureRight {
-  width: 100%;
-  max-width: 500px;
-
-  aspect-ratio: 1.5;
-
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.imgRight {
-  width: 100%;
-  height: auto;
-  position: absolute;
+.containerProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 80px;
+  max-width: 1000px;
+  margin: 80px auto;
 }
 
 .title {
-  font-size: 4rem;
-  color: red;
-  margin: 0;
+  font-size: 3.2rem;
 }
 
 .subTitle {
-  font-size: 1.4rem;
+  font-size: 2.2rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  color: rgba(17, 17, 17, 0.733);
 }
 
 .button {
-  width: 90%;
-  height: auto;
-  padding: 10px;
-  margin: auto 0 0 0;
+  font-size: 2rem;
+
+  padding: 10px 20px;
+
+  color: white;
+  background: black;
   border: none;
-
-  font-size: 1.6rem;
-  cursor: pointer;
-
-  transition: all 0.4s ease-in-out;
 }
 
-.button:hover {
-  background: gold;
+.price {
+  font-size: 1.6rem;
 }
