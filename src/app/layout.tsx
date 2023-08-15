@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: "0 20px" }}>
-        <Navbar></Navbar>asdawd
+        <Navbar></Navbar>
         {children}
       </body>
     </html>
