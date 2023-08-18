@@ -1,0 +1,22 @@
+.containerNav {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: auto;
+  padding: 0;
+
+  gap: 5px;
+}
+
+.containerNav li {
+  width: 100%;
+  padding: 10px;
+
+  text-align: center;
+  list-style: none;
+
+  font-size: 1.6rem;
+
+  background: white;
+}
