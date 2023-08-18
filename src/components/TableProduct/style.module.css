@@ -1,0 +1,19 @@
+.table{
+    width: 90%;
+    max-width: 1000px;
+    
+    margin: auto;
+}
+
+.tbody{
+    width: 100%;
+    height: auto;
+}
+
+.trHead th{
+    font-size: 1.8rem;
+    background: white;
+    padding: 10px;
+}
+
+

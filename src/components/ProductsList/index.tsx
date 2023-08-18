@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./style.module.css";
 
 const list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 
@@ -7,11 +8,11 @@ function ProductsList() {
     <>
       {list?.map((item) => {
         return (
-          <tr>
-            <td>hola</td>
-            <td>hola</td>
-            <td>hola</td>
-            <td>hola</td>
+          <tr className={style.row}>
+            <td>1</td>
+            <td>name</td>
+            <td>price</td>
+            <td>amount</td>
           </tr>
         );
       })}

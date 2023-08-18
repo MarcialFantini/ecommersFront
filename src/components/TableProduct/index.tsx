@@ -1,16 +1,18 @@
 import React from "react";
 import ProductsList from "../ProductsList";
 
+import style from "./style.module.css";
+
 function TableProduct() {
   return (
-    <table>
-      <tbody>
-        <tr>
-          <th>hola</th>
-          <th>hola</th>
-          <th>hola</th>
+    <table className={style.table}>
+      <tbody className={style.tbody}>
+        <tr className={style.trHead}>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>PRICE</th>
 
-          <th>hola</th>
+          <th>AMOUNT</th>
         </tr>
 
         <ProductsList></ProductsList>
