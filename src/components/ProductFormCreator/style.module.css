@@ -1,0 +1,44 @@
+.formContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background: rgba(102, 51, 153, 0.3);
+  backdrop-filter: blur(1px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  justify-content: center;
+
+  width: 90%;
+  height: 90%;
+
+  max-width: 700px;
+  gap: 3rem;
+
+  background: whitesmoke;
+
+  border-radius: 10px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 2.4rem;
+}
+
+.form label input {
+  font-size: 2.4rem;
+}
