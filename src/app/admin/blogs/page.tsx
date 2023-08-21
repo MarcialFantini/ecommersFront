@@ -1,7 +1,8 @@
+import TableBlogs from "@/components/TableBlogs";
 import React from "react";
 
 function BlogsRouter() {
-  return <div>BlogsRouter</div>;
+  return <TableBlogs></TableBlogs>;
 }
 
 export default BlogsRouter;

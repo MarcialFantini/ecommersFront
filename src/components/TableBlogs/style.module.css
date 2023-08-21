@@ -1,0 +1,45 @@
+.containerSearch,
+.containerTitle {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 20px auto;
+}
+
+.search {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 1.6rem;
+  margin: 5px 0;
+}
+
+.containerTitle h1 {
+  font-size: 2.4rem;
+}
+
+.containerTitle button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  background: black;
+  color: white;
+}
+
+.table {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: auto;
+}
+
+.tbody {
+  width: 100%;
+  height: auto;
+}
+
+.trHead th {
+  font-size: 1.8rem;
+  background: white;
+  padding: 10px;
+}
