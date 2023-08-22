@@ -1,7 +1,8 @@
+import OrdersPageAdmin from "@/components/OrdersPageAdmin";
 import React from "react";
 
 function OrdersPage() {
-  return <div>OrdersPage</div>;
+  return <OrdersPageAdmin />;
 }
 
 export default OrdersPage;
