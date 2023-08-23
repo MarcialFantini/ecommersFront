@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 
 import style from "./style.module.css";
 import Link from "next/link";
+import { useAppDispatch } from "@/store/hooks";
+import { toggleTheme } from "@/store/slice/Theme/theme";
 
 export function Navbar() {
+  const dispatch = useAppDispatch();
+
+  const toggleThemeHandler = () => dispatch(toggleTheme());
+
   return (
     <nav className={style.navbar}>
       <div className={style.leftContainer}>
@@ -26,22 +33,18 @@ export function Navbar() {
             </Link>
           </li>
           <li>
-            <Link className={style.link} href={"/blog"}>
-              Blog
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link className={style.link} href={"/contact"}>
-              Contact Us
+            <Link className={style.link} href={"/blogs"}>
+              Blogs
             </Link>
           </li>
         </ul>
       </div>
 
       <ul className={style.buttons}>
-        <button>Login</button>
-        <button>Search</button>
+        <li>
+          <Link href={"/login"}>Login</Link>
+        </li>
+        <button onClick={toggleThemeHandler}>Theme</button>
       </ul>
     </nav>
   );

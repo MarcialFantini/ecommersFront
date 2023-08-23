@@ -4,6 +4,10 @@
   justify-content: space-around;
 }
 
+.title {
+  font-size: 1.8rem;
+}
+
 .leftContainer {
   display: flex;
   padding: 0;
@@ -22,6 +26,7 @@
   transition: all 0.3s;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1.6rem;
 }
 
 .link:hover {
