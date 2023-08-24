@@ -2,7 +2,7 @@ import { BaseRouterApi } from "@/constant/router";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 interface productForCreate {
-  image: File;
+  image: File | null;
   name: string;
   price: number;
   amount: number;
@@ -15,16 +15,18 @@ export const thunkCreateProduct = createAsyncThunk(
     try {
       const bodyPost = new FormData();
 
-      Object.entries(body).forEach(([key, value]) =>
-        bodyPost.append(key, value)
-      );
-
-      const response = await fetch(BaseRouterApi + "/products/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      Object.entries(body).forEach(([key, value]) => {
+        console.log(key, value);
+        bodyPost.append(key, value);
       });
+
+      const response = await fetch(BaseRouterApi + "products/create", {
+        method: "POST",
+        cache: "no-cache",
+        body: bodyPost,
+      });
+
+      console.log(response);
 
       if (!response.ok) {
         throw new Error("no response");

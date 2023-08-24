@@ -1,16 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { thunkCreateProduct } from "./thunks";
 
-interface ProductsState {}
+interface ProductsState {
+  createdProduct: boolean;
+  listProducts: any[];
+}
 
-export const initialState: ProductsState = {};
+export const initialState: ProductsState = {
+  listProducts: [],
+  createdProduct: false,
+};
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
   extraReducers: (build) => {
-    build.addCase(thunkCreateProduct.fulfilled, (state, action) => {});
+    build.addCase(thunkCreateProduct.fulfilled, (state, action) => {
+      state.createdProduct = true;
+      setTimeout(() => {
+        state.createdProduct = false;
+      }, 500);
+    });
   },
 });
 

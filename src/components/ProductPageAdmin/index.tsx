@@ -14,7 +14,9 @@ function ProductPageAdmin() {
 
   return (
     <div>
-      {isActiveCreate ? <ProductFormCreator></ProductFormCreator> : null}
+      {isActiveCreate ? (
+        <ProductFormCreator toggleActive={toggleActive}></ProductFormCreator>
+      ) : null}
       <div className={style.containerTitle}>
         <h1>Products</h1>
         <button onClick={toggleActive}>New Product</button>

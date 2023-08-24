@@ -18,6 +18,7 @@ export interface ProductFormCreate {
   name: string;
   price: number;
   amount: number;
+  description: string;
 }
 
 export interface Order {
