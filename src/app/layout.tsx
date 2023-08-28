@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
+import BackImage from "@/components/BackImage";
+import Foot from "@/components/Foot/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ background: "whitesmoke", margin: "0 20px" }}>
+      <body>
         <Provider store={store}>
-          <Navbar></Navbar>
-          {children}
+          <BackImage>
+            <Navbar></Navbar>
+            {children}
+            <Foot></Foot>
+          </BackImage>
         </Provider>
       </body>
     </html>

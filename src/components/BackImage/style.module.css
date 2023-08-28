@@ -1,0 +1,17 @@
+.container {
+  transition: all 0.5s;
+}
+
+.black {
+  background: url("../../assets/back/back.jpg") fixed center no-repeat;
+  background-size: cover;
+}
+
+.light {
+  background: url("../../assets/back/backLight.jfif") fixed center no-repeat;
+  background-size: cover;
+}
+
+.margin {
+  width: 100%;
+}

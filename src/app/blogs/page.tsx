@@ -9,7 +9,6 @@ function BlogsRouter() {
   return (
     <div className={style.containerBlogs}>
       <div className={style.row}>
-        <CardBlogWhitOutText></CardBlogWhitOutText>
         <CardBlogRow></CardBlogRow>
       </div>
       <ListBlogs></ListBlogs>

@@ -2,11 +2,24 @@
   font-size: 4rem;
   text-align: center;
   margin: 40px 0;
+
+  color: white;
+  width: 100%;
+
+  padding: 40px 0;
+
+  background: rgba(52, 15, 218, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .containerCard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
-  gap: 30px;
+  gap: 10px;
+
+  margin: 30px 0;
 }

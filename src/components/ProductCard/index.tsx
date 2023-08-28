@@ -19,9 +19,11 @@ export function ProductCard() {
 
       <p className={style.titleProduct}>Name Product</p>
       <p className={style.price}>$ Price</p>
-      <button>Buy</button>
+      <button className={style.button + " " + style.buttonBuy}>Buy</button>
       <Link href={"/shop/product"}>
-        <button>Watch mor</button>
+        <button className={style.button + " " + style.buttonWatch}>
+          Watch mor
+        </button>
       </Link>
     </div>
   );

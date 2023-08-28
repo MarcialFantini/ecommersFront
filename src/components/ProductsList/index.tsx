@@ -1,18 +1,26 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
 import style from "./style.module.css";
-
-const list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { thunkGetPageProduct } from "@/store/slice/products/thunks";
 
 function ProductsList() {
+  const dispatch = useAppDispatch();
+  const list = useAppSelector((state) => state.products.listProducts);
+
+  useEffect(() => {
+    dispatch(thunkGetPageProduct(0));
+  }, []);
+
   return (
     <>
       {list?.map((item) => {
         return (
-          <tr className={style.row}>
-            <td>1</td>
-            <td>name</td>
-            <td>price</td>
-            <td>amount</td>
+          <tr key={item.id} className={style.row}>
+            <td>{item.id}</td>
+            <td>{item.name}</td>
+            <td>{item.price}</td>
+            <td>{item.amount}</td>
           </tr>
         );
       })}

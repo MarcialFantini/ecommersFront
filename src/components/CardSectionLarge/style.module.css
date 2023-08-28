@@ -8,9 +8,11 @@
   align-items: flex-start;
 
   border-radius: 10px;
-  border: 1px solid blue;
-  background: black;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
   color: white;
+
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 .text {

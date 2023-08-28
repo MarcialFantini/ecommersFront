@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { thunkCreateProduct } from "./thunks";
+import { ItemPage, thunkCreateProduct, thunkGetPageProduct } from "./thunks";
 
 interface ProductsState {
   createdProduct: boolean;
-  listProducts: any[];
+  listProducts: ItemPage[];
 }
 
 export const initialState: ProductsState = {
@@ -18,9 +18,11 @@ const productsSlice = createSlice({
   extraReducers: (build) => {
     build.addCase(thunkCreateProduct.fulfilled, (state, action) => {
       state.createdProduct = true;
-      setTimeout(() => {
-        state.createdProduct = false;
-      }, 500);
+    });
+    build.addCase(thunkGetPageProduct.fulfilled, (state, action) => {
+      if (action.payload) {
+        state.listProducts = action.payload;
+      }
     });
   },
 });

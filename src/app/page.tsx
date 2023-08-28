@@ -6,7 +6,7 @@ import { NewsHome } from "@/components/NewsHome";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ maxWidth: 1200, margin: "auto", width: "90%" }}>
       <Header></Header>
       <SectionsCars></SectionsCars>
       <BannerProduct></BannerProduct>

@@ -10,8 +10,10 @@
 
   margin: 10px 0;
 
-  background: #f42c36;
+  background: hsla(357, 90%, 56%, 0.5);
   color: white;
+
+  backdrop-filter: blur(10px);
 
   border-radius: 20px;
 }

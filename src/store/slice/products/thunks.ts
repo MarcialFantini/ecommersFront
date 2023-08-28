@@ -20,7 +20,7 @@ export const thunkCreateProduct = createAsyncThunk(
         bodyPost.append(key, value);
       });
 
-      const response = await fetch(BaseRouterApi + "products/create", {
+      const response = await fetch(BaseRouterApi + "/products/create", {
         method: "POST",
         cache: "no-cache",
         body: bodyPost,
@@ -41,6 +41,13 @@ export const thunkCreateProduct = createAsyncThunk(
   }
 );
 
+export interface ItemPage {
+  id: number;
+  name: string;
+  price: number;
+  amount: number;
+  description: string;
+}
 export const thunkGetPageProduct = createAsyncThunk(
   "thunk-get-page-product",
   async (page: number) => {
@@ -55,7 +62,11 @@ export const thunkGetPageProduct = createAsyncThunk(
         throw new Error("no response");
       }
 
-      return response;
+      const data: ItemPage[] = await response.json();
+
+      const list = data.sort((a, b) => a.id - b.id);
+
+      return list;
     } catch (error) {
       console.log(error);
     }
