@@ -3,23 +3,32 @@ import React from "react";
 
 import style from "./style.module.css";
 import { useForm } from "@/hooks/useForm";
+import { useAppDispatch } from "@/store/hooks";
+import { createUserThunk } from "@/store/slice/login/thunk";
 
 function RegisterForm({ handlerToggle }: { handlerToggle: () => void }) {
+  const dispatch = useAppDispatch();
+
   const initialState = {
     name: "",
     password: "",
     email: "",
   };
 
-  const { state, handlerOnChange, handlerOnSubmit } = useForm({
+  const { state, handlerOnChange } = useForm({
     initialState: initialState,
-    onSubmit: console.log,
   });
+
+  const handlerRegister = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    dispatch(createUserThunk(state));
+  };
 
   return (
     <div className={style.containerAll}>
       <h2 className={style.title}>Register user!</h2>
-      <form className={style.form}>
+      <form onSubmit={handlerRegister} className={style.form}>
         <label className={style.label}>
           <div
             className={

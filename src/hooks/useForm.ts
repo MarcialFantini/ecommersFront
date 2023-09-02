@@ -3,12 +3,10 @@ import { useState, ChangeEvent } from "react";
 
 interface UseFormOptions<T> {
   initialState: T;
-  onSubmit: () => void;
 }
 
 export const useForm = <T extends Record<string, string>>({
   initialState,
-  onSubmit,
 }: UseFormOptions<T>) => {
   const [state, setState] = useState<T>(initialState);
 
@@ -20,9 +18,5 @@ export const useForm = <T extends Record<string, string>>({
     }));
   };
 
-  const handlerOnSubmit = () => {
-    onSubmit();
-  };
-
-  return { handlerOnChange, handlerOnSubmit, state };
+  return { handlerOnChange, state };
 };

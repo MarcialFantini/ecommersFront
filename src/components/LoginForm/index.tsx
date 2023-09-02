@@ -3,31 +3,34 @@ import React from "react";
 
 import style from "./style.module.css";
 import { useForm } from "@/hooks/useForm";
+import { useAppDispatch } from "@/store/hooks";
+import { loginUserThunk } from "@/store/slice/login/thunk";
 
 function LoginForm({ handlerToggle }: { handlerToggle: () => void }) {
+  const dispatch = useAppDispatch();
   const initialState = {
     password: "",
-    name: "",
+    email: "",
   };
-
-  const handlerDispatch = () => {};
-
-  const { state, handlerOnChange, handlerOnSubmit } = useForm({
+  const { state, handlerOnChange } = useForm({
     initialState: initialState,
-    onSubmit: handlerDispatch,
   });
+  const handlerDispatch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(loginUserThunk(state));
+  };
 
   return (
     <div className={style.containerAll}>
-      <form className={style.form}>
+      <form onSubmit={handlerDispatch} className={style.form}>
         <label className={style.label} htmlFor="username">
           <input
             className={style.input}
             onChange={handlerOnChange}
             type="text"
             id="username"
-            name="name"
-            value={state.name}
+            name="email"
+            value={state.email}
             required
           />
           <div className={style.containerText}>
@@ -35,10 +38,10 @@ function LoginForm({ handlerToggle }: { handlerToggle: () => void }) {
               className={
                 style.textAbsolute +
                 " " +
-                (state.name.length > 0 ? style["hiddenText"] : "")
+                (state.email.length > 0 ? style["hiddenText"] : "")
               }
             >
-              User
+              email
             </p>
           </div>
         </label>
