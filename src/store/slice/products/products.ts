@@ -1,9 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ItemPage, thunkCreateProduct, thunkGetPageProduct } from "./thunks";
+import { thunkCreateProduct, thunkGetPageProduct } from "./thunks";
 
+export interface productsList {
+  id: number;
+  name: string;
+  price: number;
+  amount: number;
+  description: string;
+}
 interface ProductsState {
   createdProduct: boolean;
-  listProducts: ItemPage[];
+  listProducts: productsList[];
 }
 
 export const initialState: ProductsState = {

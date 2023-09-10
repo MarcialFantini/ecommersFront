@@ -1,0 +1,17 @@
+.containerCard {
+  min-height: 80vh;
+
+  width: 95%;
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+.containerCard h2 {
+  font-size: 2rem;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+}

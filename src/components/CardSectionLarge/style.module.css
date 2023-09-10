@@ -13,6 +13,8 @@
   color: white;
 
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+  position: relative;
 }
 
 .text {
@@ -36,4 +38,25 @@
   color: white;
   border-radius: 20px;
   border: none;
+}
+
+.img {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  width: 60%;
+  height: auto;
+
+  transition: all 0.3s;
+
+  transform: translateY(200px);
+  opacity: 0;
+
+  z-index: -1;
+}
+
+.activeImage {
+  transform: translateY(0px);
+  opacity: 1;
 }

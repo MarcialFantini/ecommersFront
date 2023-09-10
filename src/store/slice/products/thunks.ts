@@ -9,13 +9,21 @@ interface productForCreate {
   description: string;
 }
 
+interface productsList {
+  id: number;
+  name: string;
+  price: number;
+  amount: number;
+  description: string;
+}
+
 export const thunkCreateProduct = createAsyncThunk(
   "thunk-create-product",
-  async (body: productForCreate) => {
+  async (props: { body: productForCreate; token: string }) => {
     try {
       const bodyPost = new FormData();
 
-      Object.entries(body).forEach(([key, value]) => {
+      Object.entries(props.body).forEach(([key, value]) => {
         console.log(key, value);
         bodyPost.append(key, value);
       });
@@ -24,6 +32,9 @@ export const thunkCreateProduct = createAsyncThunk(
         method: "POST",
         cache: "no-cache",
         body: bodyPost,
+        headers: {
+          Authorization: props.token,
+        },
       });
 
       console.log(response);
@@ -62,8 +73,9 @@ export const thunkGetPageProduct = createAsyncThunk(
         throw new Error("no response");
       }
 
-      const data: ItemPage[] = await response.json();
+      const data: productsList[] = await response.json();
 
+      console.log(data);
       const list = data.sort((a, b) => a.id - b.id);
 
       return list;

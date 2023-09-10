@@ -2,7 +2,7 @@ import { ProductFormCreate } from "@/interfaces/DB";
 import React, { useState } from "react";
 
 import style from "./style.module.css";
-import { useAppDispatch } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { thunkCreateProduct } from "@/store/slice/products/thunks";
 
 function ProductFormCreator({ toggleActive }: { toggleActive: () => void }) {
@@ -16,10 +16,15 @@ function ProductFormCreator({ toggleActive }: { toggleActive: () => void }) {
   };
 
   const [product, setProduct] = useState<ProductFormCreate>(initialProduct);
+  const token = useAppSelector((state) => state.login.token) || "";
 
   const dispatch = useAppDispatch();
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setProduct((prevProduct) => ({
       ...prevProduct,
@@ -39,14 +44,16 @@ function ProductFormCreator({ toggleActive }: { toggleActive: () => void }) {
     event.preventDefault();
     // Aquí puedes agregar la lógica para enviar los datos del producto al servidor
 
-    dispatch(thunkCreateProduct(product));
+    dispatch(thunkCreateProduct({ body: product, token }));
     toggleActive();
   };
 
   return (
     <div className={style.formContainer}>
       <form className={style.form} onSubmit={handleSubmit}>
-        <button onClick={toggleActive}>X</button>
+        <button className={style.ExitButton} onClick={toggleActive}>
+          X
+        </button>
 
         <label htmlFor="name">
           Name:
@@ -79,7 +86,16 @@ function ProductFormCreator({ toggleActive }: { toggleActive: () => void }) {
             onChange={handleInputChange}
           />
         </label>
-
+        <label className={style.textAreaContainer} htmlFor="description">
+          description:
+          <textarea
+            className={style.textArea}
+            id="description"
+            name="description"
+            value={product.description}
+            onChange={handleInputChange}
+          />
+        </label>
         <label htmlFor="image">
           Image
           <input
@@ -90,7 +106,9 @@ function ProductFormCreator({ toggleActive }: { toggleActive: () => void }) {
             onChange={handleImageChange}
           />
         </label>
-        <button type="submit">Create Product</button>
+        <button className={style.createProductButton} type="submit">
+          Create Product
+        </button>
       </form>
     </div>
   );

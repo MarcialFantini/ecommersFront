@@ -1,17 +1,17 @@
 import React from "react";
-const list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 import style from "./style.module.css";
+import { Product } from "../TableBlogs";
 
-function BlogsList() {
+function BlogsList({ list }: { list: Product[] }) {
   return (
     <>
       {list?.map((item) => {
         return (
-          <tr className={style.row}>
-            <td>1</td>
-            <td>name</td>
-            <td>price</td>
-            <td>amount</td>
+          <tr key={item.id} className={style.row}>
+            <td>{item.id}</td>
+            <td>{item.category}</td>
+            <td>{item.title}</td>
+            <td>{item.sub_title}</td>
           </tr>
         );
       })}

@@ -15,6 +15,16 @@
   color: white;
 
   box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.3);
+
+  transform: translate(30px);
+  opacity: 0;
+
+  transition: all 0.3s;
+}
+
+.active {
+  transform: translate(0);
+  opacity: 1;
 }
 
 .picture {
@@ -29,6 +39,9 @@
 
   overflow: hidden;
   border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 20px auto;
 }
 
 .img {

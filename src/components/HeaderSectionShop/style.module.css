@@ -1,6 +1,30 @@
+@keyframes Images {
+  0% {
+    opacity: 0;
+    transform: translate(100%) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0px) scale(1.2);
+  }
+
+  80% {
+    transform: translate(0px) scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+}
+
 .img {
   width: 100%;
   height: auto;
+}
+
+.active {
+  animation: Images 2s forwards;
 }
 
 .picture {
@@ -9,6 +33,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  opacity: 0;
+  transform: translate(100px) scale(0.6);
 }
 
 .imgPrimary {
@@ -50,7 +77,10 @@
   align-items: flex-start;
   justify-content: space-around;
 
-  background: rgba(182, 172, 157, 0.589);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 0 20px;
 }

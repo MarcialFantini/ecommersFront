@@ -19,6 +19,7 @@ interface Message {
 interface MessageLogin {
   token: string;
   code: number;
+  isAdmin: boolean;
 }
 
 export const createUserThunk = createAsyncThunk(
@@ -79,7 +80,7 @@ export const loginUserThunk = createAsyncThunk(
         throw new Error("Inicio de sesión fallido"); // Puedes personalizar el mensaje de error según tus necesidades.
       }
 
-      return message.token;
+      return message;
     } catch (error) {
       console.error(error);
       return false;

@@ -1,16 +1,10 @@
 "use client";
-import { useEffect } from "react";
+
 import style from "./style.module.css";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { thunkGetPageProduct } from "@/store/slice/products/thunks";
+import { useAppSelector } from "@/store/hooks";
 
 function ProductsList() {
-  const dispatch = useAppDispatch();
   const list = useAppSelector((state) => state.products.listProducts);
-
-  useEffect(() => {
-    dispatch(thunkGetPageProduct(0));
-  }, []);
 
   return (
     <>

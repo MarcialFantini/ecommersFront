@@ -18,10 +18,19 @@
   font-size: 2.4rem;
 }
 
-.containerTitle button {
+.buttonNormal {
+  cursor: pointer;
+
   border: none;
   padding: 10px 20px;
   font-size: 1.6rem;
   background: black;
   color: white;
+  margin-right: 10px;
+
+  transition: all 0.3s;
+}
+
+.buttonNormal:hover {
+  background: rgba(0, 0, 0, 0.5);
 }

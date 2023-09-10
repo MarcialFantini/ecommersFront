@@ -13,6 +13,10 @@
 
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+
+  overflow: hidden;
 }
 
 .text {
@@ -36,4 +40,26 @@
   color: white;
   border-radius: 20px;
   border: none;
+}
+
+.img {
+  position: absolute;
+
+  height: auto;
+  width: 60%;
+
+  right: 5px;
+  bottom: 5px;
+
+  transition: all 0.3s;
+
+  transform: translate(100px);
+  opacity: 0;
+
+  z-index: -1;
+}
+
+.activeImage {
+  transform: translate(0);
+  opacity: 1;
 }

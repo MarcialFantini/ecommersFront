@@ -4,18 +4,28 @@ import objeto from "../../assets/objectoPrueba/objeto.png";
 
 import style from "./style.module.css";
 import Image from "next/image";
+import { BlogsPageText } from "@/store/slice/blogs/thunk";
 
-export default function CardNewsColumn() {
+interface props {
+  blog: BlogsPageText;
+}
+
+export default function CardNewsColumn({ blog }: props) {
   return (
     <div className={style.cardContainer}>
       <picture className={style.picture}>
-        <Image className={style.img} src={objeto} alt="" />
+        <Image
+          className={style.img}
+          width={400}
+          height={200}
+          src={"http://localhost:5000/api/v1/images/blogs/one/" + blog.id}
+          alt={blog.title}
+        />
       </picture>
-      <p className={style.subTitle}>October 5, 2019 by Paul</p>
-      <h2 className={style.title}>How to choose perfect gadgets</h2>
+      <p className={style.subTitle}>{blog.sub_title}</p>
+      <h2 className={style.title}>{blog.title}</h2>
       <p className={style.text}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        nostrum libero esse voluptas eius?
+        {blog.listText[0] ? blog.listText[0].text_blog : ""}
       </p>
     </div>
   );

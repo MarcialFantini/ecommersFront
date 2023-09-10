@@ -24,6 +24,8 @@
 
   flex-direction: column;
   justify-content: space-around;
+
+  overflow: hidden;
 }
 
 .subtitle {
@@ -44,14 +46,30 @@
   color: white;
 }
 
+@keyframes ImageActive {
+  0% {
+    transform: translate(200px) scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .picture {
   width: 100%;
   height: auto;
+}
+.active {
+  animation: ImageActive 0.5s forwards;
 }
 
 .img {
   width: 100%;
   height: auto;
+  transform: translate(200px) scale(2);
+  opacity: 0;
 }
 
 .button {
@@ -68,13 +86,32 @@
   justify-content: center;
 
   color: white;
+  overflow: hidden;
+}
+
+@keyframes ActiveText {
+  0% {
+    transform: translate(100px) scale(0.2);
+  }
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.activeText {
+  animation: ActiveText 2s forwards;
 }
 
 .containerRight h4 {
   font-size: 3.4rem;
   margin: 0;
+  transform: translate(100px) scale(0.2);
+  opacity: 0;
 }
 
 .containerRight p {
   font-size: 1.6rem;
+  transform: translate(100px) scale(0.2);
+  opacity: 0;
 }

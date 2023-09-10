@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 
 import style from "./style.module.css";
 
@@ -6,6 +7,10 @@ import objeto from "../../assets/objectoPrueba/objeto.png";
 import Image from "next/image";
 
 export function Header() {
+  const [active, setActive] = useState(false);
+
+  const handlerActive = () => setActive(true);
+
   return (
     <header className={style.container}>
       <div className={style.containerLeft}>
@@ -14,13 +19,18 @@ export function Header() {
 
         <h2 className={style.titleH2}>HEAD SET</h2>
         <picture className={style.picture}>
-          <Image className={style.img} src={objeto} alt="" />
+          <Image
+            onLoad={handlerActive}
+            className={style.img + " " + (active ? style.active : "")}
+            src={objeto}
+            alt=""
+          />
         </picture>
         <button className={style.button}>Shop ByCategory</button>
       </div>
       <div className={style.containerRight}>
-        <h4>Description</h4>
-        <p>
+        <h4 className={style.activeText}>Description</h4>
+        <p className={style.activeText}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,
           illum autem maiores reprehenderit repudiandae voluptates. Eos vel
           ullam laboriosam.

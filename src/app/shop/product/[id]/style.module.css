@@ -1,0 +1,67 @@
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.picture {
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 80px;
+
+  width: 95%;
+  max-width: 1000px;
+  margin: 80px auto;
+
+  min-height: 350px;
+}
+
+.containerProductRight {
+  background: rgba(0, 0, 0, 0.219);
+
+  backdrop-filter: blur(5px);
+  padding: 20px;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 3.2rem;
+  color: white;
+}
+
+.subTitle {
+  color: white;
+  font-size: 2.2rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.button {
+  font-size: 2rem;
+
+  padding: 10px 20px;
+
+  color: white;
+  background: black;
+  border: none;
+}
+
+.price {
+  color: white;
+  font-size: 1.6rem;
+}

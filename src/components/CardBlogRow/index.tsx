@@ -1,29 +1,37 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.css";
-import objeto from "../../assets/objectoPrueba/person.jpg";
+import { BlogsPageText } from "@/store/slice/blogs/thunk";
 
 interface props {
   isRow?: boolean;
+  blog: BlogsPageText | undefined;
 }
 
-export const CardBlogRow = ({ isRow }: props) => {
+export const CardBlogRow = ({ isRow, blog }: props) => {
   return (
     <div
+      key={blog?.id}
       className={style.containerCardBlogRow + " " + (isRow ? style.isRow : "")}
     >
       <picture className={style.picture}>
-        <Image src={objeto} className={style.img} alt=""></Image>
+        <Image
+          width={800}
+          height={400}
+          src={
+            blog
+              ? "http://localhost:5000/api/v1/images/blogs/one/" + blog.id
+              : ""
+          }
+          className={style.img}
+          alt=""
+        ></Image>
       </picture>
       <div className={style.containerText}>
-        <h2 className={style.title}>
-          Fodd festival everywere in this universe
-        </h2>
+        <h2 className={style.title}>{blog ? blog.title : ""}</h2>
         <p className={style.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-          distinctio officia quae. Facilis omnis cumque veritatis optio? Velit
-          ipsa cum placeat quasi molestias, architecto quidem, voluptatum, minus
-          facilis numquam sint?
+          {blog && blog.listText[0] ? blog.listText[0].text_blog : ""}
         </p>
       </div>
     </div>

@@ -1,15 +1,21 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import Image from "next/image";
 
-import prueba from "../../assets/objectoPrueba/person.jpg";
+import prueba from "../../assets/shop/ropa.jpg";
+import toy from "../../assets/shop/toy.jpg";
+import men from "../../assets/shop/man.jpg";
 
 function HeaderSectionShop() {
+  const [active, setActive] = useState(false);
+
   return (
     <header className={style.headerContainer}>
       <div className={style.containerLeft}>
-        <picture className={style.picture}>
+        <picture className={style.picture + " " + (active ? style.active : "")}>
           <Image
+            onLoad={() => setActive(true)}
             className={style.img + " " + style.imgPrimary}
             src={prueba}
             alt="Logo de Real Shop Network"
@@ -25,14 +31,18 @@ function HeaderSectionShop() {
 
         <div className={style.containerRightBottom}>
           <div className={style.containerImgSub}>
-            <picture className={style.picture}>
-              <Image className={style.img} src={prueba} alt="Trending Item 1" />
+            <picture
+              className={style.picture + " " + (active ? style.active : "")}
+            >
+              <Image className={style.img} src={toy} alt="Trending Item 1" />
             </picture>
             <h2>#trending</h2>
           </div>
           <div className={style.containerImgSub}>
-            <picture className={style.picture}>
-              <Image className={style.img} src={prueba} alt="Trending Item 2" />
+            <picture
+              className={style.picture + " " + (active ? style.active : "")}
+            >
+              <Image className={style.img} src={men} alt="Trending Item 2" />
             </picture>
             <h2>#trending</h2>
           </div>
