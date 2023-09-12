@@ -6,7 +6,7 @@ function OrdersPageAdmin() {
   return (
     <div>
       <div className={style.containerTitle}>
-        <h1>Orders</h1>
+        <h1 className={style.title}>Orders</h1>
       </div>
       <div className={style.containerSearch}>
         <input

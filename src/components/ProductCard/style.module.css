@@ -71,9 +71,11 @@
 }
 
 .buttonWatch {
+  cursor: pointer;
   background: rgba(0, 0, 255, 0.5);
 }
 
 .buttonBuy {
+  cursor: pointer;
   background: rgba(0, 128, 0, 0.5);
 }

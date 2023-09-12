@@ -30,17 +30,45 @@ export const carSlice = createSlice({
       }
     },
 
-    delOneProductToCar: (state, action: PayloadAction<productsList>) => {
-      const isInList = () => {};
+    plusProduct: (state, action: PayloadAction<number>) => {
+      const indexInList = state.listOfProducts.findIndex(
+        (state) => state.product.id === action.payload
+      );
+
+      state.listOfProducts[indexInList].amount =
+        state.listOfProducts[indexInList].amount + 1;
+    },
+
+    delOneProductToCar: (state, action: PayloadAction<number>) => {
+      const isInList = state.listOfProducts.findIndex(
+        (item) => item.product.id === action.payload
+      );
+
+      const amount = state.listOfProducts[isInList].amount;
+
+      if (amount > 1) {
+        state.listOfProducts[isInList].amount = amount - 1;
+      } else {
+        state.listOfProducts = state.listOfProducts.filter(
+          (state) => state.product.id !== action.payload
+        );
+      }
     },
     delProductCar: (state, action: PayloadAction<number>) => {
       state.listOfProducts = state.listOfProducts.filter(
         (product) => product.product.id !== action.payload
       );
     },
+    setDefaultCar: (state) => (state = initialState),
   },
 });
 
-export const { addProductToCar, delProductCar } = carSlice.actions;
+export const {
+  setDefaultCar,
+  addProductToCar,
+  delProductCar,
+  delOneProductToCar,
+  plusProduct,
+} = carSlice.actions;
 
 export const carReducer = carSlice.reducer;

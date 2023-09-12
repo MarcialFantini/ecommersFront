@@ -46,7 +46,7 @@ const loginSlice = createSlice({
         if (action.payload) {
           state.token = action.payload.token;
           state.isAdmin = action.payload.isAdmin;
-          localStorage.setItem("token", JSON.stringify(action.payload));
+          localStorage.setItem("token", action.payload.token);
           localStorage.setItem(
             "isAdmin",
             JSON.stringify(action.payload.isAdmin)

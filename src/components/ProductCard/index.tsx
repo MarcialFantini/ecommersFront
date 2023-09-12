@@ -24,9 +24,7 @@ export function ProductCard({ products, index }: props) {
     }, 300 * index);
   }, []);
 
-  const handlerBuyProduct = () => {
-    dispatch(addProductToCar(products));
-  };
+  const handlerBuyProduct = () => dispatch(addProductToCar(products));
 
   return (
     <div

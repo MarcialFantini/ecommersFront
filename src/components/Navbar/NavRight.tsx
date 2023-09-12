@@ -67,23 +67,27 @@ function NavRight({ handlerNavActive, activeNav }: props) {
         </li>
       </ul>
 
-      <ul className={style.listLink}>
-        <li onClick={handlerNavActive}>
-          <Link className={style.link} href={"/admin/products"}>
-            Products Admin
-          </Link>
-        </li>
-        <li onClick={handlerNavActive}>
-          <Link className={style.link} href={"/admin/orders"}>
-            Orders Admin
-          </Link>
-        </li>
-        <li onClick={handlerNavActive}>
-          <Link className={style.link} href={"/admin/blogs"}>
-            Blogs Admin
-          </Link>
-        </li>
-      </ul>
+      {isAdmin ? (
+        <ul className={style.listLink}>
+          <li onClick={handlerNavActive}>
+            <Link className={style.link} href={"/admin/products"}>
+              Products Admin
+            </Link>
+          </li>
+          <li onClick={handlerNavActive}>
+            <Link className={style.link} href={"/admin/orders"}>
+              Orders Admin
+            </Link>
+          </li>
+          <li onClick={handlerNavActive}>
+            <Link className={style.link} href={"/admin/blogs"}>
+              Blogs Admin
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

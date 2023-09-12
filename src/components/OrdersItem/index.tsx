@@ -1,9 +1,21 @@
 import React from "react";
 import style from "./style.module.css";
-import { ProductCar } from "@/store/slice/car/car";
+import {
+  ProductCar,
+  plusProduct,
+  delOneProductToCar,
+  delProductCar,
+} from "@/store/slice/car/car";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
 
 function OrdersItem({ product }: { product: ProductCar }) {
+  const dispatch = useDispatch();
+
+  const handlerLess = () => dispatch(delOneProductToCar(product.product.id));
+  const handlerPlus = () => dispatch(plusProduct(product.product.id));
+  const handlerDelProduct = () => dispatch(delProductCar(product.product.id));
+
   return (
     <div className={style.containerOrderItem}>
       <picture className={style.picture}>
@@ -28,8 +40,12 @@ function OrdersItem({ product }: { product: ProductCar }) {
             </div>
             <div>
               <p className={style.countItem}>{product.amount}</p>
-              <button className={style.buttonAction}>+</button>
-              <button className={style.buttonAction}>-</button>
+              <button onClick={handlerPlus} className={style.buttonAction}>
+                +
+              </button>
+              <button onClick={handlerLess} className={style.buttonAction}>
+                -
+              </button>
             </div>
 
             <div>
@@ -37,7 +53,12 @@ function OrdersItem({ product }: { product: ProductCar }) {
               <p className={style.textPrice}>
                 Total: {product.amount * product.product.price}
               </p>
-              <button className={style.buttonRemove}>Remove</button>
+              <button
+                onClick={handlerDelProduct}
+                className={style.buttonRemove}
+              >
+                Remove
+              </button>
             </div>
           </div>
         </div>
