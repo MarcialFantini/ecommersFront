@@ -61,7 +61,15 @@ export const TextsHook = () => {
     setImage(file);
   };
 
+  const handlerSetInitial = () => {
+    setTextsItems([]);
+    setCount(1);
+    setBlog(initialState);
+    setImage(null);
+  };
+
   return {
+    handlerSetInitial,
     textsItems,
     handlerAddNewText,
     handlerDel,

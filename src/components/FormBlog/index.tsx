@@ -19,6 +19,7 @@ function FormBlog() {
     image,
     handlerUpdateBlog,
     handlerUpdateImage,
+    handlerSetInitial,
   } = TextsHook();
 
   const handlerSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -32,6 +33,8 @@ function FormBlog() {
           token: token,
         })
       );
+
+      handlerSetInitial();
     }
   };
 

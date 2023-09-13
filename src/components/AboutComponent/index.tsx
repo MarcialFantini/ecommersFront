@@ -1,14 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import person from "../../assets/objectoPrueba/person.jpg";
 import style from "./style.module.css";
 import Image from "next/image";
 
 function AboutComponent() {
+  const [active, setActive] = useState(false);
+
   return (
     <>
       <div className={style.containerMain}>
         <picture className={style.picture}>
-          <Image src={person} alt="person about" className={style.img}></Image>
+          <Image
+            onLoad={() => setActive(true)}
+            src={person}
+            alt="person about"
+            className={style.img + " " + (active ? style.showImage : "")}
+          ></Image>
         </picture>
         <div className={style.containerText}>
           <h2 className={style.title}>Hi there!</h2>

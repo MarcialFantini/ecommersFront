@@ -22,6 +22,8 @@
 }
 
 .listLink {
+  transition: all 0.3s;
+
   display: flex;
   gap: 10px;
 
@@ -119,4 +121,8 @@
 
 .buttonNav:hover {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.hiddenList {
+  opacity: 0;
 }
